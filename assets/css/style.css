@@ -1,0 +1,38 @@
+h1 {
+
+font-size: 150px;
+
+text-align: center;
+
+
+}
+
+
+body {
+
+max-width: 960px;
+display: inline;
+
+}
+
+
+h2 {
+
+font-size: 100px;
+
+
+}
+
+
+p {
+
+margin-bottom: 15px;
+
+}
+
+.Fun {
+
+border: 8px solid lightblue;
+width: 120px;
+
+}
