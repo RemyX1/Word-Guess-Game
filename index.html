@@ -4,7 +4,8 @@
 <meta charset="utf-8">    
 <title>Guess Game!</title>
 
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
 
 
 
@@ -13,33 +14,31 @@
 <body>
     <div class="container">
         <div>
-            <h1>Hangman!</h1>
+            <h1 class="center blue-text">Hangman!</h1>
         </div>
         
         
-        <div class="container row">
+        <div class="row">
             <div class="col-lg-6">
-                <h2>Rules!</h2>
-                
-                <p>1.</p>
-                <p>2.</p>
-                <p>3.</p>
+                <h2 class="orange-text">Rules!</h2>
+                <h5 class="orange-text">1. Use they keyboard to figure out the hidden word.</h4>
+                <h5 class="orange-text">2. You have 10 guesses to win.</h4>
+                <h5 class="orange-text">3. Don't run out of guesses.</h4>
             </div>
         </div> 
 
-        <div id="Word" ></div>
-        <div id="Guess-left"></div>
-        <div id="Used"></div>
-        <div id="Loss"></div>
-        <div id="Wins"></div>
+        <h3 class="blue-text center" id="Word" ></h3>
+        <div class="blue-text center" id="Guess-left"></div>
 
 
-        <div class="container">
-        <div class="footer-copyright text-center py-3">Thanks For Playing</div>
+        <div class="row">
+        <h2 class="footer text-center center orange-text">Thanks For Playing</h2>
         </div>
     </div>
     
     
     <script rel="script/javascript" src="./assets/javascript/game.js"> </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+        
 </body>
 </html>

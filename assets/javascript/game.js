@@ -1,7 +1,7 @@
 
 
 // Work Bank
-var words = ["house", "school", "church", "buisness", "hotel"]
+var words = ["pasta", "pizza", "sushi", "donut", "burger", "cheese", "cookie", "cake", "fruit", "steak", "fish", "chicken", "taco"]
 // The Answer
 var TheWord = "";
 // Array containing the asnwers letters
@@ -9,25 +9,21 @@ var WordLetters = [];
 // How many blanks there should be
 var blank = 0;
 // Array of all Guesses
-var guesses = [];
-// wrong asnwers user has chosen
 var WrongGuess = [];
 // Mix of blanks and Correct letters
 var mix = [];
 // Place where
 var y = document.getElementById("Game");
 
+//Guess Tracker
 
-var wins = 0;
-var loss = 0;
-var totalguesses = 9;
+var totalguesses;
 
-
-
+//Start Function
 
 function Start () {
 
-totalguesses = 9;
+ totalguesses = 10;
 
 TheWord = words[Math.floor(Math.random() * words.length)];
 
@@ -44,62 +40,46 @@ wrongGuesses = [];
 for (var i = 0; i < blank; i++) {
    mix.push("_");
 }
-console.log(TheWord)
-console.log(WordLetters)
-
-
-console.log(mix)
-
-
-
-
-
-
-
-
 
 
 document.getElementById("Guess-left").innerHTML = totalguesses;
 
-
 document.getElementById("Word").innerHTML = mix.join(" ");
-
 
 document.getElementById("Used").innerHTML = WrongGuess.join(" ");
 
 }
 
-
+//Checks User Input against answer for answer match.
 
 function letters(letter) {
 
 
-   var CorrectLetter = false;
+    CorrectLetter = false;
 
    for ( var i = 0; i < blank; i++) {
 
-   if (TheWord[i] === letter) {
+   if (WordLetters  [i] === letter) {
 
      
       CorrectLetter = true;
-    }
+      mix[i] = letter
+      document.getElementById("Word").innerHTML = mix.join(" ");
+      
 
- else {
+    }}
+
+    if (CorrectLetter = false) {
 
    
-   WrongGuess.push(letter);
-
+      WrongGuess.push(letter);
    
-   totalguesses--;
-   
-      }
-
-
-
-
+      
+      
+         }
 }
 
-}
+//Endround function.
 
 function endround() {
 
@@ -117,13 +97,13 @@ function endround() {
   if (WordLetters.toString() === mix.toString()) {
 
    
-   wins++;
 
    alert("You win!");
 
    
-   document.getElementById("wins").innerHTML = wins;
-
+   
+   document.getElementById("Wins").innerHTML = wins
+   
    
    Start();
  }
@@ -132,7 +112,6 @@ function endround() {
  else if (totalguesses === 0) {
 
    
-   loss++;
 
    
    alert("You lose");
@@ -147,20 +126,18 @@ function endround() {
 }
 
 
-
-
-
+//Code executed to begin.
 
 Start();
 
-document.onkeyup = function(event) {
+document.onkeypress = function(event) {
 
-   
+  
    guesses = String.fromCharCode(event.which).toLowerCase();
  
-   
    letters(guesses);
- 
+   totalguesses--;
+   document.getElementById("Guess-left").innerHTML = totalguesses;
   
    endround();
  };
